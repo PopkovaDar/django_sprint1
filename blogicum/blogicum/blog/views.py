@@ -45,18 +45,19 @@ posts = [
 ]
 
 
-def index(request):
+def index(reqeust):
     template = 'blog/index.html'
     context = {'posts': posts[::-1]}
-    return render(request, template, context)
+    return render(reqeust, template, context)
 
 
-def post_detail(request, id):
+def post_detail(reqeust, id):
     template = 'blog/detail.html'
     context: dict = {'post': posts[id]}
-    return render(request, template, context)
+    return render(reqeust, template, context)
 
 
-def category_posts(request, category_posts):
-    context: dict = {'slug': category_posts}
-    return render(request, 'blog/category.html', context)
+def category_posts(reqeust, category_slug):
+    template = 'blog/category.html'
+    context: dict = {'slug': category_slug}
+    return render(reqeust, template, context)

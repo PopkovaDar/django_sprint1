@@ -2,11 +2,11 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def about(request):
+def about(reqeust):
     about_name = 'pages/about.html'
-    return render(request, about_name)
+    return render(reqeust, about_name)
 
 
-def rules(request):
+def rules(reqeust):
     rules_name = 'pages/rules.html'
-    return render(request, rules_name)
+    return render(reqeust, rules_name)

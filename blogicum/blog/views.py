@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
 posts = [
     {
         'id': 0,
@@ -47,13 +46,16 @@ posts = [
 
 def index(reqeust):
     template = 'blog/index.html'
-    context = {'posts': posts[::-1]}
+    context = {'posts': posts}
     return render(reqeust, template, context)
 
 
 def post_detail(reqeust, id):
-    template = 'blog/detail.html'
-    context: dict = {'post': posts[id]}
+    try:
+        template = 'blog/detail.html'
+        context: dict = {'post': posts[id]}
+    except IndexError:
+        raise Http404
     return render(reqeust, template, context)
 
 

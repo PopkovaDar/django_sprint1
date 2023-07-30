@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+
+{% block title %}
+<title>{{post.location}}. {{post.date}}</title>
+{% endblock %}
+
 {% block content %}
-      <div class="container py-5">
-        {% include "includes/text.html" %}
-      </div>
+  {% include "includes/text.html" %}
 {% endblock %}

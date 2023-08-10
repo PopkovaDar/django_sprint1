@@ -56,7 +56,7 @@ def post_detail(reqeust, id):
     try:
         context: dict = {'post': posts[id]}
     except IndexError:
-        raise Http404('Полное описание поста не найдено')
+        raise Http404(f"Пост номер {id} не найден")
     return render(reqeust, template, context)
 
 
